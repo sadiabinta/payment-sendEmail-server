@@ -57,7 +57,9 @@ app.post("/create-checkout-session", async (req, res) => {
     res.status(500).json({ error: e.message });
   }
 });
-
+app.get('/',(req,res)=>{
+  res.send('server Running')
+})
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
