@@ -41,7 +41,7 @@ app.post("/create-checkout-session", async (req, res) => {
       ],
       
       // return_url: 'http://localhost:5173/payment',
-      success_url: "https://payment-send-email.vercel.app/payment",
+      success_url: "https://payment-send-email.vercel.app/payment-success",
       // cancel_url: "http://localhost:5173",
       // customer_email:req.body.customer_email
     })
