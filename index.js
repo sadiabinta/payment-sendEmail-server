@@ -7,13 +7,12 @@ const cors = require("cors");
 
 const app = express();
 const port = 5000;
-app.use(
-  cors({
-    origin: 'https://payment-send-email.vercel.app/',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-  })
-);
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://payment-send-email.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  next();
+});
 const stripe = require("stripe")(process.env.PAYMENT_SECRET_KEY);
 // app.use(bodyParser.json());
 
