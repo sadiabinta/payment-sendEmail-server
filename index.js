@@ -46,7 +46,7 @@ app.post("/create-checkout-session", async (req, res) => {
       // cancel_url: "http://localhost:5173",
       // customer_email:req.body.customer_email
     })
-    console.log(customer_details.email);
+    // console.log(customer_details.email);
 
     // Perform additional actions for a successful payment
     // For example, update your database, send confirmation emails, etc.
