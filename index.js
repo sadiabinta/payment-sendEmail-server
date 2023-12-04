@@ -9,7 +9,7 @@ const app = express();
 const port = 5000;
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://payment-send-email.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   })
@@ -42,7 +42,7 @@ app.post("/create-checkout-session", async (req, res) => {
       ],
       
       // return_url: 'http://localhost:5173/payment',
-      success_url: "http://localhost:5173/payment",
+      success_url: "https://payment-send-email.vercel.app/payment",
       // cancel_url: "http://localhost:5173",
       // customer_email:req.body.customer_email
     })
